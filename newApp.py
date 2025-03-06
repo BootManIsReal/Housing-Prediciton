@@ -52,16 +52,16 @@ def main():
         col1, col2 = st.columns(2)
         
         with col1:
-            longitude = st.number_input("🌍 Longitude", value=-122.23)
-            latitude = st.number_input("🌎 Latitude", value=37.88)
-            housing_median_age = st.number_input("🏠 Housing Median Age", value=41.0)
-            total_rooms = st.number_input("🛏️ Total Rooms", value=880.0)
-            total_bedrooms = st.number_input("🛌 Total Bedrooms", value=129.0)
+            longitude = st.number_input("Longitude", value=-122.23)
+            latitude = st.number_input("Latitude", value=37.88)
+            housing_median_age = st.number_input("Housing Median Age", value=41.0)
+            total_rooms = st.number_input("Total Rooms", value=880.0)
+            total_bedrooms = st.number_input("Total Bedrooms", value=129.0)
         
         with col2:
-            population = st.number_input("👨‍👩‍👧 Population", value=322.0)
-            households = st.number_input("🏡 Households", value=126.0)
-            median_income = st.number_input("💰 Median Income", value=8.3252)
+            population = st.number_input("Population", value=322.0)
+            households = st.number_input("Households", value=126.0)
+            median_income = st.number_input("Median Income", value=8.3252)
             ocean_proximity = st.selectbox(
                 "🌊 Ocean Proximity",
                 ["NEAR BAY", "<1H OCEAN", "INLAND", "NEAR OCEAN", "ISLAND"],
@@ -82,9 +82,9 @@ def main():
     
     input_data = preprocess_input(input_data)
     
-    if st.button("🔮 Predict Price"):
+    if st.button("Predict Price"):
         prediction = model.predict(input_data)
-        st.success(f"💰 The estimated housing price is: **${prediction[0]:,.2f}**")
+        st.success(f"The estimated housing price is: **${prediction[0]:,.2f}**")
     
     st.markdown("<br><hr style='border: 1px solid #ddd;'>", unsafe_allow_html=True)
     st.markdown("<p style='text-align: center;'>Made with ❤️ using Streamlit</p>", unsafe_allow_html=True)
